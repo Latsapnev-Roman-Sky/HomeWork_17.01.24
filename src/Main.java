@@ -9,6 +9,11 @@ public class Main {
         int clientOS = 1;
         int clientDeviceYear = 2015;
         checkClientDeviceYear(clientOS, clientDeviceYear);
+
+        //Task 3
+        int deliveryDistance = 95;
+        int deliveryDays =calculateDeliveryDistance(deliveryDistance);
+        printDeliveryDays(deliveryDays);
     }
     public static void checkLeapYear (int year) {
         if (year > 1584 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
@@ -29,6 +34,30 @@ public class Main {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Некорректная ОС");
+        }
+    }
+    public static int calculateDeliveryDistance (int Distance) {
+        int days = 1;
+        if (Distance < 20) {
+            days = days;
+        }
+        if (Distance >= 20) {
+            days++;
+        }
+        if (Distance >=60) {
+            days++;
+        }
+        if (Distance > 100) {
+            days = 0;
+        }
+        return days;
+    }
+
+    public static void printDeliveryDays (int days) {
+        if (days == 0) {
+            System.out.println("Доставки нет");
+        } else {
+            System.out.println("Потребуется дней "+days);
         }
     }
 }
